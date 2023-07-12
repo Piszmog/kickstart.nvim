@@ -44,6 +44,9 @@ vim.g.maplocalleader = ' '
 -- Line numbers
 vim.opt.relativenumber = true
 
+-- Disable mouse
+vim.opt.mouse = ""
+
 -- Install package manager
 --    https://github.com/folke/lazy.nvim
 --    `:help lazy.nvim.txt` for more info
