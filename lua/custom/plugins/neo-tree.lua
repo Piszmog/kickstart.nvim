@@ -9,6 +9,7 @@ return {
 		"nvim-tree/nvim-web-devicons", -- not strictly required, but recommended
 		"MunifTanjim/nui.nvim",
 	},
+	cond = false,
 	config = function()
 		require('neo-tree').setup({
 			default_component_configs = {
