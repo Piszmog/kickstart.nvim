@@ -206,6 +206,10 @@ require('lazy').setup({
       return vim.fn.executable 'make' == 1
     end,
   },
+  {
+    "nvim-telescope/telescope-file-browser.nvim",
+    dependencies = { "nvim-telescope/telescope.nvim", "nvim-lua/plenary.nvim" },
+  },
 
   {
     -- Highlight, edit, and navigate code
@@ -264,7 +268,6 @@ vim.wo.signcolumn = 'yes'
 
 -- Decrease update time
 vim.o.updatetime = 250
-vim.o.timeout = true
 vim.o.timeoutlen = 300
 
 -- Set completeopt to have a better completion experience
@@ -309,6 +312,7 @@ require('telescope').setup {
 
 -- Enable telescope fzf native, if installed
 pcall(require('telescope').load_extension, 'fzf')
+pcall(require('telescope').load_extension, 'file_browser')
 
 -- See `:help telescope.builtin`
 vim.keymap.set('n', '<leader>?', require('telescope.builtin').oldfiles, { desc = '[?] Find recently opened files' })
