@@ -42,7 +42,7 @@ vim.g.mapleader = ' '
 vim.g.maplocalleader = ' '
 
 -- Line numbers
-vim.opt.relativenumber = true
+vim.opt.relativenumber = false
 
 -- Indenting
 vim.opt.tabstop = 4

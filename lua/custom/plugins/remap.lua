@@ -11,12 +11,18 @@ vim.keymap.set('n', '<leader>fs', function()
 	telescope.grep_string({ search = vim.fn.input("Grep > ") })
 end, { desc = "Find files with grep" })
 
+-- Telescope File Browser
+vim.keymap.set('n', '<leader>fe', function()
+	vim.cmd('Telescope file_browser path=%:p:h select_buffer=true')
+end, { desc = "Toggle file browser" })
+
 -- Harpoon
 local mark = require('harpoon.mark')
 local ui = require('harpoon.ui')
 
 vim.keymap.set('n', '<leader>ha', mark.add_file, { desc = "Harpoon current file" })
 vim.keymap.set('n', '<C-e>', ui.toggle_quick_menu, { desc = "Harpoon toggle quick menu" })
+vim.keymap.set('n', '<leader>hc', mark.clear_all, { desc = "Harpoon clear all" })
 
 -- Undotree
 vim.keymap.set('n', '<leader>u', vim.cmd.UndotreeToggle, { desc = "Toggle Undotree" })
