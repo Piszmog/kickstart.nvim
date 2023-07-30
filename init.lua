@@ -50,6 +50,12 @@ vim.opt.softtabstop = 4
 vim.opt.shiftwidth = 4
 -- vim.opt.expandtab = true
 
+-- Netrw
+--vim.g.netrw_banner = 0
+--vim.g.netrw_liststyle = 3
+--vim.g.netrw_browse_split = 1
+--vim.g.netrw_winsize = 25
+
 -- Install package manager
 --    https://github.com/folke/lazy.nvim
 --    `:help lazy.nvim.txt` for more info
@@ -304,6 +310,11 @@ require('telescope').setup {
       },
     },
   },
+  pickers = {
+    find_files = {
+      find_command = { 'rg', '--files', '--hidden', '--glob', '!**/.git/*' },
+    }
+  }
 }
 
 -- Enable telescope fzf native, if installed
